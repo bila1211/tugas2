@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 
 class AtmCard extends StatelessWidget {
@@ -58,3 +59,65 @@ class AtmCard extends StatelessWidget {
     );
   }
 }
+=======
+import 'package:flutter/material.dart';
+
+class AtmCard extends StatelessWidget {
+  final String bankName;
+  final String cardNumber;
+  final String balance;
+  final Color color1;
+  final Color color2;
+
+  const AtmCard({
+    super.key,
+    required this.bankName,
+    required this.cardNumber,
+    required this.balance,
+    required this.color1,
+    required this.color2,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      margin: const EdgeInsets.only(right: 16),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        gradient: LinearGradient(
+          colors: [color1, color2],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: color2.withOpacity(0.4),
+            blurRadius: 10,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(bankName,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold)),
+          const Spacer(),
+          Text(balance,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold)),
+          const SizedBox(height: 6),
+          Text(cardNumber, style: const TextStyle(color: Colors.white70)),
+        ],
+      ),
+    );
+  }
+}
+>>>>>>> 35a1b6cd44a5d48d5ffbfcf0a6344294bcf5c255
